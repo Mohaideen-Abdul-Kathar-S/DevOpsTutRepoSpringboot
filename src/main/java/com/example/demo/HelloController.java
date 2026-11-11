@@ -13,6 +13,6 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String hello() {
-        return "Hello!!! kathar this is lates commit and Jenkins successfully built my Spring Boot application.";
+        return "Hello!!! ci cd with health checking.";
     }
 }
