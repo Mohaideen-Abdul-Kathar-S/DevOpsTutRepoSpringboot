@@ -13,6 +13,6 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String hello() {
-        return "Hello!!! ci cd with health checking.";
+        return "Hello!!! CI/CD with health checking.";
     }
 }
