@@ -8,11 +8,11 @@ public class HelloController {
 
     @GetMapping("/")
     public String home() {
-        return "Welcome to Spring Boot CI and CD using Jenkins!";
+        return "Welcome to Spring Boot CI and CD and jenkins file using Jenkins!";
     }
 
     @GetMapping("/hello")
     public String hello() {
-        return "Hello!!! CI/CD with health checking.";
+        return "Hello!!! CI/CD(added jenkins file) with health checking.";
     }
 }

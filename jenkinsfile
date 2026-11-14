@@ -1,0 +1,54 @@
+
+pipeline {
+
+    agent any
+
+    triggers {
+        pollSCM('* * * * *')
+    }
+
+    stages {
+
+        stage('Build') {
+            steps {
+                echo 'Starting Spring Boot Build'
+
+                bat 'call gradlew.bat clean build bootWar'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Running Test Cases'
+
+                bat 'call gradlew.bat test'
+            }
+        }
+
+        stage('Package') {
+            steps {
+                echo 'Archiving WAR File'
+
+                archiveArtifacts artifacts: 'build/libs/*.war',
+                                 fingerprint: true
+            }
+        }
+
+    }
+
+    post {
+
+        success {
+            echo 'Pipeline completed successfully!'
+        }
+
+        failure {
+            echo 'Pipeline failed. Check the console output.'
+        }
+
+        always {
+            echo 'Pipeline execution finished.'
+        }
+
+    }
+}
