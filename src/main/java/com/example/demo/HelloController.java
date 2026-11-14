@@ -13,6 +13,6 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String hello() {
-        return "Hello!!! CI/CD(added jenkins file) with health checking.";
+        return "Hello!!! CI/CD(added jenkins file) with health checking. and testing...";
     }
 }
